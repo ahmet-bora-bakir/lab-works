@@ -68,10 +68,12 @@ void inputStudent(Student& student, int subjectNumber)
         }
     }
     
+    cin.ignore();
     cout << "Input student name: ";
-    cin >> student.fullName;
-        
+    cin.getline(student.fullName, 99);
+    
     student.subjectMarks = new float[subjectNumber];
+    
     for(int i = 0 ; i < subjectNumber ; i++)
     {
         cout << "Please input subjectMarks: ";
@@ -181,4 +183,10 @@ int main()
     cout << "Name: " << max.fullName << endl;
     cout << "Average Marks: " << calculateAverage(max, subjectNumber) << endl;
     
+    
+    for(int i = 0 ; i < studentSize ; i++)
+    {
+        delete[] students[i].subjectMarks;
+    }
+    delete[] students;
 }
