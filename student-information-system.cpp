@@ -71,11 +71,9 @@ void inputStudent(Student& student, int subjectNumber)
     cout << "Input student name: ";
     cin >> student.fullName;
         
-    
+    student.subjectMarks = new float[subjectNumber];
     for(int i = 0 ; i < subjectNumber ; i++)
     {
-        
-        student.subjectMarks = new float[subjectNumber];
         cout << "Please input subjectMarks: ";
         cin >> student.subjectMarks[i];
         
